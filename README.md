@@ -217,23 +217,3 @@ Authorization: Bearer <access_token>
 
 ---
 
-## Как выложить проект на GitHub
-
-1. **Создать репозиторий** на GitHub (например, `auth_backend`), без README и без .gitignore.
-
-2. **Локально инициализировать Git и отправить код:**
-   ```bash
-   cd auth_backend
-   git init
-   git add .
-   git commit -m "Initial: auth + RBAC + mock API"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/auth_backend.git
-   git push -u origin main
-   ```
-
-3. **Не коммитить** файл `.env` (он уже в `.gitignore`). В репозитории должен быть только `.env.example` — по нему видно, какие переменные нужны для запуска.
-
-4. **В README репозитория** уже есть разделы «Установка», «Миграции и тестовые данные», «Запуск» — проверяющий сможет склонировать проект, выполнить `pip install -r requirements.txt`, `migrate`, `seed_rbac`, `runserver` и протестировать API.
-
-5. **Опционально:** в описании репозитория или в начале README указать: «Тестовое задание: backend с собственной аутентификацией (JWT) и авторизацией (RBAC) на Django + DRF».
